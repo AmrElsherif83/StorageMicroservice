@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{B65104F5-0FEA-4E44-AB41-6B068DC98501}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{82943883-32C2-4303-849E-F0D67E240AAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{57F47F5F-8D17-41EE-89DA-F040362AAE20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{9E75B298-00EC-4C6C-A4E4-E7D93B2CABEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4DD4D67F-D84E-42E4-9407-F4C6C29C07BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.Application", "Application\StorageMicroservice.Application\StorageMicroservice.Application.csproj", "{C39BE0E4-BBBC-4DD0-8442-E3E32E877770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.Domain", "Domain\StorageMicroservice.Domain\StorageMicroservice.Domain.csproj", "{21D02460-2BC6-4C78-94E2-17FEBCA587E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.Infrastructure", "Infrastructure\StorageMicroservice.Infrastructure\StorageMicroservice.Infrastructure.csproj", "{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.Shared", "Shared\StorageMicroservice.Shared\StorageMicroservice.Shared.csproj", "{20A6DA95-8153-4936-9EF2-6D1ADBA33513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.API", "Core\StorageMicroservice.API\StorageMicroservice.API.csproj", "{5442916A-342F-46E5-8340-2D86C36637F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C39BE0E4-BBBC-4DD0-8442-E3E32E877770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39BE0E4-BBBC-4DD0-8442-E3E32E877770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39BE0E4-BBBC-4DD0-8442-E3E32E877770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39BE0E4-BBBC-4DD0-8442-E3E32E877770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D02460-2BC6-4C78-94E2-17FEBCA587E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D02460-2BC6-4C78-94E2-17FEBCA587E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D02460-2BC6-4C78-94E2-17FEBCA587E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D02460-2BC6-4C78-94E2-17FEBCA587E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A6DA95-8153-4936-9EF2-6D1ADBA33513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A6DA95-8153-4936-9EF2-6D1ADBA33513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A6DA95-8153-4936-9EF2-6D1ADBA33513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A6DA95-8153-4936-9EF2-6D1ADBA33513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5442916A-342F-46E5-8340-2D86C36637F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5442916A-342F-46E5-8340-2D86C36637F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5442916A-342F-46E5-8340-2D86C36637F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5442916A-342F-46E5-8340-2D86C36637F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C39BE0E4-BBBC-4DD0-8442-E3E32E877770} = {B65104F5-0FEA-4E44-AB41-6B068DC98501}
+		{21D02460-2BC6-4C78-94E2-17FEBCA587E2} = {82943883-32C2-4303-849E-F0D67E240AAC}
+		{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3} = {57F47F5F-8D17-41EE-89DA-F040362AAE20}
+		{20A6DA95-8153-4936-9EF2-6D1ADBA33513} = {9E75B298-00EC-4C6C-A4E4-E7D93B2CABEC}
+		{5442916A-342F-46E5-8340-2D86C36637F7} = {4DD4D67F-D84E-42E4-9407-F4C6C29C07BD}
+	EndGlobalSection
+EndGlobal
