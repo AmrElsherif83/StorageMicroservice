@@ -101,7 +101,7 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
 
              +-------------------------------------------------+
              |        Storage Microservice API                |
-             |        (ASP.NET Core, MediatR, Swagger)        |
+             |        (ASP.NET Core, MediatR, Scalar)        |
              +-----------------------+------------------------+
                                      |
 
@@ -120,7 +120,7 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
   |  - MongoDB for File Metadata Storage                |
   +---------------------------+---------------------------+
                                      |
-                                     
+
   +---------------------------+---------------------------+
   |        Domain Layer (Entities & Interfaces)         |
   |  - FileMetadata (MongoDB Document)                  |
