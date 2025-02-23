@@ -100,32 +100,50 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
  
 
              +-------------------------------------------------+
+             
              |        Storage Microservice API                |
+            
              |        (ASP.NET Core, MediatR, Scalar)        |
+            
              +-----------------------+------------------------+
                                      |
 
   +---------------------------+---------------------------+
+  
   |         Application Layer (CQRS Handlers)            |
+  
   |  - UploadFileHandler       - DownloadFileHandler     |
+ 
   |  - ListFilesHandler        - DeleteFileHandler      |
+ 
   |  - Uses DTOs and Services                           |
+ 
   +---------------------------+---------------------------+
                                      |
 
   +---------------------------+---------------------------+
+  
   |        Infrastructure Layer (Storage, DB, MQ)        |
+  
   |  - Storage Providers: AWS S3, Azure Blob, Local      |
+  
   |  - RabbitMQ for Event Messaging                     |
+ 
   |  - MongoDB for File Metadata Storage                |
+ 
   +---------------------------+---------------------------+
                                      |
 
   +---------------------------+---------------------------+
+  
   |        Domain Layer (Entities & Interfaces)         |
+ 
   |  - FileMetadata (MongoDB Document)                  |
+  
   |  - IStorageProvider (Storage Abstraction)           |
+  
   |  - IEventBus (Messaging Abstraction)                |
+ 
   +------------------------------------------------------+
 
 2️⃣ Low-Level Design (LLD)
