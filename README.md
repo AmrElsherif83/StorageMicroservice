@@ -109,45 +109,45 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
 
                                      |
 
-  +---------------------------+---------------------------+
+             +---------------------------+---------------------------+
   
-  |         Application Layer (CQRS Handlers)            |
+            |         Application Layer (CQRS Handlers)            |
   
-  |  - UploadFileHandler       - DownloadFileHandler     |
+            |  - UploadFileHandler       - DownloadFileHandler     |
  
-  |  - ListFilesHandler        - DeleteFileHandler       |
+            |  - ListFilesHandler        - DeleteFileHandler       |
  
-  |  - Uses DTOs and Services                            |
+            |  - Uses DTOs and Services                            |
  
-  +---------------------------+---------------------------+
+            +---------------------------+---------------------------+
 
                                      |
 
-  +---------------------------+---------------------------+
+             +---------------------------+---------------------------+
   
-  |        Infrastructure Layer (Storage, DB, MQ)        |
+             |        Infrastructure Layer (Storage, DB, MQ)        |
   
-  |  - Storage Providers: AWS S3, Azure Blob, Local      |
+             |  - Storage Providers: AWS S3, Azure Blob, Local      |
   
-  |  - RabbitMQ for Event Messaging                      |
+             |  - RabbitMQ for Event Messaging                      |
  
-  |  - MongoDB for File Metadata Storage                 |
+             |  - MongoDB for File Metadata Storage                 |
  
-  +---------------------------+---------------------------+
+             +---------------------------+---------------------------+
 
                                      |
 
-  +---------------------------+---------------------------+
+                +---------------------------+---------------------------+
   
-  |        Domain Layer (Entities & Interfaces)         |
+                |        Domain Layer (Entities & Interfaces)         |
  
-  |  - FileMetadata (MongoDB Document)                  |
+                |  - FileMetadata (MongoDB Document)                  |
   
-  |  - IStorageProvider (Storage Abstraction)           |
+                |  - IStorageProvider (Storage Abstraction)           |
   
-  |  - IEventBus (Messaging Abstraction)                |
+                |  - IEventBus (Messaging Abstraction)                |
  
-  +------------------------------------------------------+
+                +------------------------------------------------------+
 
 2️⃣ Low-Level Design (LLD)
 The Low-Level Design (LLD) provides detailed implementation and class-level architecture.
