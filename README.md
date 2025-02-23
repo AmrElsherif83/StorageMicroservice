@@ -10,6 +10,7 @@ Upload File
 Users can upload files via an API endpoint.
 The system stores files in the configured storage provider (AWS S3, Azure Blob, Local).
 Metadata (e.g., filename, URL) is stored in a database.
+
 Download File
 
 Users can download files using a unique identifier or filename.
@@ -18,9 +19,11 @@ List Files
 
 Users can retrieve a paginated list of stored files.
 Search and filtering options are available based on filename or metadata.
+
 Delete File (Optional)
 
 Users can delete files from storage and remove their metadata from the database.
+
 🔹 Storage Provider Support
 Support for Multiple Storage Providers
 The microservice should support:
@@ -28,6 +31,7 @@ AWS S3
 Azure Blob Storage
 Local Storage
 Storage provider selection should be dynamic using IOptionsMonitor.
+
 🔹 Event-Driven Architecture
 Message Queue for Asynchronous Processing
 
@@ -36,6 +40,7 @@ Publishing events when a file is uploaded or deleted.
 Retry Mechanism for Messaging
 
 Messages should have retry logic using Polly (e.g., AsyncRetryPolicy).
+
 🔹 Security & Access Control
 Authentication & Authorization
 
@@ -46,6 +51,7 @@ Admins can manage all files, but regular users can only access their own files.
 File Access Restrictions
 
 Generate pre-signed URLs for time-limited access to private files.
+
 - Non-Functional Requirements (NFRs)
 These define how the system should perform.
 
@@ -62,6 +68,7 @@ Use CDN (Content Delivery Network) for faster file access.
 2)	The high level and low-level design for the microservice
 
 High-Level and Low-Level Design for the Storage Microservice
+
 1️⃣ High-Level Design (HLD)
 The High-Level Design (HLD) provides an architectural overview of the system, focusing on components, modules, and interactions.
 
