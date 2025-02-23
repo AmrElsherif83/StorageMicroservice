@@ -106,6 +106,7 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
              |        (ASP.NET Core, MediatR, Scalar)        |
             
              +-----------------------+------------------------+
+
                                      |
 
   +---------------------------+---------------------------+
@@ -114,11 +115,12 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
   
   |  - UploadFileHandler       - DownloadFileHandler     |
  
-  |  - ListFilesHandler        - DeleteFileHandler      |
+  |  - ListFilesHandler        - DeleteFileHandler       |
  
-  |  - Uses DTOs and Services                           |
+  |  - Uses DTOs and Services                            |
  
   +---------------------------+---------------------------+
+
                                      |
 
   +---------------------------+---------------------------+
@@ -127,11 +129,12 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
   
   |  - Storage Providers: AWS S3, Azure Blob, Local      |
   
-  |  - RabbitMQ for Event Messaging                     |
+  |  - RabbitMQ for Event Messaging                      |
  
-  |  - MongoDB for File Metadata Storage                |
+  |  - MongoDB for File Metadata Storage                 |
  
   +---------------------------+---------------------------+
+
                                      |
 
   +---------------------------+---------------------------+
