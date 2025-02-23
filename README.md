@@ -150,55 +150,85 @@ Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
                 +------------------------------------------------------+
 
 2️⃣ Low-Level Design (LLD)
+
 The Low-Level Design (LLD) provides detailed implementation and class-level architecture.
 
 🔹 API Endpoints
+
 HTTP Method	Endpoint	Description
+
 POST	/api/storage/upload	Uploads a file
+
 GET	/api/storage/download/{filename}	Downloads a file
+
 GET	/api/storage/list	Lists stored files
+
 DELETE	/api/storage/delete/{filename}	Deletes a file
 
 Conclusion
+
 ✅ High-Level Design (HLD) focuses on architecture, modules, and major components.
+
 ✅ Low-Level Design (LLD) focuses on class-level details and implementation logic.
+
 This microservice follows best practices like:
 
 Clean Architecture
+
 CQRS + Event-Driven
+
 MongoDB + RabbitMQ
+
 Storage Abstraction for Multi-Cloud Support
 
 
 3)	The type of the storage that will be used and why, and how the files will be saved and retrieved 
 
 Storage Type Selection and File Handling Strategy
+
 1️⃣ Storage Types and Their Use Cases
+
 The Storage Microservice supports multiple storage backends based on configuration. The choice of which storage type to use depends on business needs and scalability requirements. The supported storage options include:
 
 Storage Type	Use Case	Why Use It?
+
 Amazon S3	Cloud storage for distributed, scalable applications	Highly available, cost-effective, and supports lifecycle policies
 Azure Blob Storage	Enterprise cloud applications using Microsoft Azure	High scalability, integration with Azure ecosystem
 Local File System	Small-scale or on-premise storage	Simple, fast, and requires no cloud dependency
 MongoDB GridFS (optional)	Storing large files within MongoDB	Allows querying file metadata directly in MongoDB
+
 2️⃣ How Files Will Be Saved and Retrieved
+
 Regardless of the storage provider, the file handling workflow follows a consistent process:
 
 📌 File Upload Process
+
 Receive File: The API receives a file via HTTP POST (multipart/form-data).
+
 Choose Storage Provider: The system dynamically selects a storage provider (S3, Azure, Local).
+
 Save File: The provider uploads the file and returns the file URL.
+
 Save Metadata: The metadata (file name, storage location, timestamp) is stored in MongoDB.
+
 Emit Event: A message is published to RabbitMQ for further processing.
+
 📌 File Retrieval Process
+
 Find Metadata: The system queries MongoDB to find the storage URL.
+
 Retrieve File: The storage provider downloads the file from S3/Azure/Local.
+
 Return File Stream: The API serves the file as a streamed response.
 
 3️⃣ Why This Approach?
+
 ✔ Scalable: Cloud storage (S3/Azure) can handle large-scale file uploads.
+
 ✔ Flexible: The system supports multiple storage backends without code changes.
+
 ✔ Efficient: Metadata is stored in MongoDB, allowing fast queries without scanning storage.
+
 ✔ Resilient: Uses RabbitMQ for event-driven processing (e.g., notify services when a file is uploaded).
 
 
@@ -206,26 +236,41 @@ Return File Stream: The API serves the file as a streamed response.
 
 
 Communication with Storage Microservice 🚀
+
 The Storage Microservice will support multiple communication mechanisms to allow seamless interaction with other microservices. The key communication patterns are:
 
 1️⃣ Synchronous Communication (REST API) 🛠️
+
 🔹 Use Case: When other microservices need to directly interact with the Storage Microservice for file uploads, downloads, and metadata retrieval.
+
 🔹 Protocol: HTTP (REST API)
+
 🔹 Data Format: JSON
 
 📌 REST API Endpoints
+
 Method	Endpoint	Description
+
 POST	/api/storage/upload	Uploads a file and returns metadata
+
 GET	/api/storage/download/{fileName}	Downloads a file
+
 GET	/api/storage/list?page=1&pageSize=10	Retrieves paginated file metadata
+
 DELETE	/api/storage/delete/{fileName}	Deletes a file
 
 2️⃣ Asynchronous Communication (Event-Driven with RabbitMQ) 📨
+
 🔹 Use Case: When other microservices need event notifications about file uploads (e.g., Logging, Analytics, AI Processing).
+
 🔹 Protocol: RabbitMQ (Message Broker)
+
 🔹 Data Format: JSON (Serialized Event Messages)
 
 📌 Events Published by Storage Microservice
+
 Event	Exchange	Routing Key	Subscribers
+
 FileUploadedEvent	storage-exchange	file.uploaded	Logging, AI Processing
+
 FileDeletedEvent	storage-exchange	file.deleted	Cleanup Service
