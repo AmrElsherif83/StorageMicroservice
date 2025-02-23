@@ -1,0 +1,24 @@
+# Use official .NET SDK image
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+COPY ["Core/StorageMicroservice.API/StorageMicroservice.API.csproj", "StorageMicroservice.API/"]
+COPY ["Application/StorageMicroservice.Application/StorageMicroservice.Application.csproj", "StorageMicroservice.Application/"]
+COPY ["Domain/StorageMicroservice.Domain/StorageMicroservice.Domain.csproj", "StorageMicroservice.Domain/"]
+COPY ["Infrastructure/StorageMicroservice.Infrastructure/StorageMicroservice.Infrastructure.csproj", "StorageMicroservice.Infrastructure/"]
+RUN dotnet restore "Core/StorageMicroservice.API/StorageMicroservice.API.csproj"
+
+COPY . .
+WORKDIR "/src/Core/StorageMicroservice.API"
+RUN dotnet build -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "StorageMicroservice.API.dll"]

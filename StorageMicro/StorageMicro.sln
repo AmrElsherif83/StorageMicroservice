@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.Shared"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.API", "Core\StorageMicroservice.API\StorageMicroservice.API.csproj", "{5442916A-342F-46E5-8340-2D86C36637F7}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{82688AC2-208C-4A6A-AAA3-BEC76F07B1B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F65EB0DB-82F8-4B2B-8BD0-926EB24BA9F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageMicroservice.Tests", "Tests\StorageMicroservice.Tests\StorageMicroservice.Tests.csproj", "{D195A27A-76C7-42EA-880A-25B8948827EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +55,14 @@ Global
 		{5442916A-342F-46E5-8340-2D86C36637F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5442916A-342F-46E5-8340-2D86C36637F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5442916A-342F-46E5-8340-2D86C36637F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82688AC2-208C-4A6A-AAA3-BEC76F07B1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82688AC2-208C-4A6A-AAA3-BEC76F07B1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82688AC2-208C-4A6A-AAA3-BEC76F07B1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82688AC2-208C-4A6A-AAA3-BEC76F07B1B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D195A27A-76C7-42EA-880A-25B8948827EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D195A27A-76C7-42EA-880A-25B8948827EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D195A27A-76C7-42EA-880A-25B8948827EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D195A27A-76C7-42EA-880A-25B8948827EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +73,6 @@ Global
 		{76EE00D3-5649-43E0-BF8B-2B6558F3DAF3} = {57F47F5F-8D17-41EE-89DA-F040362AAE20}
 		{20A6DA95-8153-4936-9EF2-6D1ADBA33513} = {9E75B298-00EC-4C6C-A4E4-E7D93B2CABEC}
 		{5442916A-342F-46E5-8340-2D86C36637F7} = {4DD4D67F-D84E-42E4-9407-F4C6C29C07BD}
+		{D195A27A-76C7-42EA-880A-25B8948827EA} = {F65EB0DB-82F8-4B2B-8BD0-926EB24BA9F0}
 	EndGlobalSection
 EndGlobal
