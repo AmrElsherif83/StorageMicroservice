@@ -267,10 +267,4 @@ DELETE	/api/storage/delete/{fileName}	Deletes a file
 
 🔹 Data Format: JSON (Serialized Event Messages)
 
-📌 Events Published by Storage Microservice
 
-Event	Exchange	Routing Key	Subscribers
-
-FileUploadedEvent	storage-exchange	file.uploaded	Logging, AI Processing
-
-FileDeletedEvent	storage-exchange	file.deleted	Cleanup Service
