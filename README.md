@@ -97,14 +97,14 @@ Domain Layer (Entities, Interfaces)
 Defines core domain models (e.g., FileMetadata).
 Defines interfaces for IStorageProvider, IEventBus, IFileRepository.
 🔹 High-Level Architecture Diagram
-pgsql
-Copy
-Edit
+ 
+
              +-------------------------------------------------+
              |        Storage Microservice API                |
              |        (ASP.NET Core, MediatR, Swagger)        |
              +-----------------------+------------------------+
                                      |
+
   +---------------------------+---------------------------+
   |         Application Layer (CQRS Handlers)            |
   |  - UploadFileHandler       - DownloadFileHandler     |
@@ -112,6 +112,7 @@ Edit
   |  - Uses DTOs and Services                           |
   +---------------------------+---------------------------+
                                      |
+
   +---------------------------+---------------------------+
   |        Infrastructure Layer (Storage, DB, MQ)        |
   |  - Storage Providers: AWS S3, Azure Blob, Local      |
@@ -119,6 +120,7 @@ Edit
   |  - MongoDB for File Metadata Storage                |
   +---------------------------+---------------------------+
                                      |
+                                     
   +---------------------------+---------------------------+
   |        Domain Layer (Entities & Interfaces)         |
   |  - FileMetadata (MongoDB Document)                  |
